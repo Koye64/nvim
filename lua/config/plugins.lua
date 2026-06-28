@@ -98,6 +98,7 @@ vim.lsp.enable({
   'basedpyright',
   'bashls',
   'clangd',
+  'gdscript',
   'lua_ls',
   'rust_analyzer',
   'texlab',
