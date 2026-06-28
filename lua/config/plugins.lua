@@ -1,4 +1,7 @@
 vim.pack.add({
+  'https://github.com/saghen/blink.lib',
+  'https://github.com/saghen/blink.cmp',
+  'https://github.com/romus204/tree-sitter-manager.nvim',
   'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/folke/lazydev.nvim',
   'https://github.com/lukas-reineke/indent-blankline.nvim',
@@ -12,6 +15,14 @@ vim.pack.add({
   'https://github.com/nvim-mini/mini.nvim',
   { src = 'https://github.com/catppuccin/nvim', name = 'catpuccin' },
 })
+
+require('tree-sitter-manager').setup({
+  auto_install = true,
+})
+
+local cmp = require('blink.cmp')
+cmp.build():pwait()
+cmp.setup()
 
 vim.g['vimtex_view_method'] = 'zathura'
 
