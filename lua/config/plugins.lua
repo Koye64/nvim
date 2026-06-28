@@ -95,6 +95,7 @@ require('mini.pairs').setup({
 })
 
 vim.lsp.enable({
+  'basedpyright',
   'bashls',
   'clangd',
   'lua_ls',
