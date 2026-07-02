@@ -13,8 +13,13 @@ vim.pack.add({
   'https://github.com/akinsho/toggleterm.nvim',
   'https://github.com/chomosuke/typst-preview.nvim',
   'https://github.com/nvim-mini/mini.nvim',
-  { src = 'https://github.com/catppuccin/nvim', name = 'catpuccin' },
+  'https://github.com/folke/tokyonight.nvim'
 })
+
+require('tokyonight').setup({
+  style = 'moon',
+})
+vim.cmd.colorscheme('tokyonight')
 
 require('tree-sitter-manager').setup({
   auto_install = true,
@@ -25,14 +30,6 @@ cmp.build():pwait()
 cmp.setup()
 
 vim.g['vimtex_view_method'] = 'zathura'
-
-require('catppuccin').setup({
-  flavour = 'mocha',
-  term_colors = true,
-  auto_integrations = true,
-})
-
-vim.cmd.colorscheme('catppuccin-nvim')
 
 require('lazydev').setup()
 
@@ -71,18 +68,12 @@ require('oil').setup({
 
 require('lualine').setup({
   options = {
+    theme = 'tokyonight',
     globalstatus = true,
-    -- always_show_tabline = true,
   },
   sections = {
-    -- lualine_a = { 'mode' },
-    -- lualine_b = { 'branch', 'diff', 'diagnostics' },
     lualine_c = { 'buffers' },
-    -- lualine_x = { 'encoding', 'fileformat', 'filetype' },
-    -- lualine_y = { 'progress' },
-    -- lualine_z = { 'location' },
   },
-  -- inactive_sections = {},
 })
 
 require('gitsigns').setup()

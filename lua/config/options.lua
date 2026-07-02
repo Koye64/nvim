@@ -33,7 +33,5 @@ o.completeopt = 'fuzzy,menu,menuone,noinsert,popup'
 g.mapleader = ' '
 g.maplocalleader = '\\'
 
--- set built-in catppuccin colorscheme as fallback
-vim.cmd.colorscheme('catppuccin')
 -- experimental new UI
 require('vim._core.ui2').enable()
