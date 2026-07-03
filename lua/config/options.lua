@@ -29,6 +29,8 @@ o.wrap = false
 o.pummaxwidth = 40
 o.pumheight = 20
 o.completeopt = 'fuzzy,menu,menuone,noinsert,popup'
+o.foldmethod = 'indent'
+o.foldlevelstart = 99
 
 g.mapleader = ' '
 g.maplocalleader = '\\'
