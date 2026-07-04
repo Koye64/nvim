@@ -13,8 +13,12 @@ vim.pack.add({
   'https://github.com/akinsho/toggleterm.nvim',
   'https://github.com/chomosuke/typst-preview.nvim',
   'https://github.com/nvim-mini/mini.nvim',
-  'https://github.com/folke/tokyonight.nvim'
+  'https://github.com/folke/tokyonight.nvim',
+  'https://github.com/folke/todo-comments.nvim',
+  'https://github.com/nvim-lua/plenary.nvim'
 })
+
+require('todo-comments').setup()
 
 require('tokyonight').setup({
   style = 'moon',
