@@ -21,7 +21,7 @@ vim.pack.add({
 require('todo-comments').setup()
 
 require('tokyonight').setup({
-  style = 'moon',
+  style = 'night',
 })
 vim.cmd.colorscheme('tokyonight')
 
