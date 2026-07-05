@@ -15,7 +15,9 @@ vim.pack.add({
   'https://github.com/nvim-mini/mini.nvim',
   'https://github.com/folke/tokyonight.nvim',
   'https://github.com/folke/todo-comments.nvim',
-  'https://github.com/nvim-lua/plenary.nvim'
+  'https://github.com/nvim-lua/plenary.nvim',
+  'https://github.com/mason-org/mason.nvim',
+  'https://github.com/mason-org/mason-lspconfig.nvim'
 })
 
 require('todo-comments').setup()
@@ -33,7 +35,7 @@ local cmp = require('blink.cmp')
 cmp.build():pwait()
 cmp.setup()
 
-vim.g['vimtex_view_method'] = 'zathura'
+vim.g.vimtex_view_method = 'zathura'
 
 require('lazydev').setup()
 
@@ -100,14 +102,19 @@ require('mini.pairs').setup({
   },
 })
 
+require('mason').setup()
+require('mason-lspconfig').setup({
+  ensure_installed = {
+    'basedpyright',
+    'bashls',
+    'clangd',
+    'lua_ls',
+    'texlab',
+    'tinymist',
+  }
+})
+
 vim.lsp.enable({
-  'basedpyright',
-  'bashls',
-  'clangd',
-  'gdscript',
-  'lua_ls',
-  'rust_analyzer',
-  'texlab',
-  'tinymist',
-  'ts_ls',
+  'gdscript',      -- Godot is the language server
+  'rust_analyzer', -- Managed externally
 })
