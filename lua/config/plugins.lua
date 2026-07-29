@@ -17,15 +17,31 @@ vim.pack.add({
   'https://github.com/folke/todo-comments.nvim',
   'https://github.com/nvim-lua/plenary.nvim',
   'https://github.com/mason-org/mason.nvim',
-  'https://github.com/mason-org/mason-lspconfig.nvim'
+  'https://github.com/mason-org/mason-lspconfig.nvim',
+  'https://github.com/catppuccin/nvim',
 })
 
 require('todo-comments').setup()
 
-require('tokyonight').setup({
-  style = 'night',
+require('catppuccin').setup({
+  flavour = 'mocha',
+  background = {
+    light = 'latte',
+    dark = 'mocha',
+  },
+  transparent_background = true,
+  term_colors = true,
+  lsp_styles = {
+    underlines = {
+      errors = { 'undercurl' },
+      hints = { 'underdouble' },
+      warnings = { 'underdouble' },
+      information = { 'underline' },
+      ok = { 'underline' },
+    },
+  },
 })
-vim.cmd.colorscheme('tokyonight')
+vim.cmd.colorscheme('catppuccin-nvim')
 
 require('tree-sitter-manager').setup({
   auto_install = true,
