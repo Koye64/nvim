@@ -28,6 +28,7 @@ o.undolevels = 1000
 o.wrap = true
 o.linebreak = true
 o.breakindent = true
+o.spell = true
 o.pummaxwidth = 40
 o.pumheight = 20
 o.completeopt = 'fuzzy,menu,menuone,noinsert,popup'
